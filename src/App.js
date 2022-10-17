@@ -1,95 +1,17 @@
-import { useState, useEffect } from 'react';
-import { db } from './firebase-config';
-import {
-  collection,
-  doc,
-  onSnapshot,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-} from 'firebase/firestore';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Crud } from './pages/Crud';
 
-function App() {
-  const [users, setUsers] = useState([]);
-  const [newName, setNewName] = useState('');
-  const [newAge, setNewAge] = useState(0);
-
-  const createUser = async () => {
-    await addDoc(collection(db, 'users'), {
-      name: newName,
-      age: Number(newAge),
-    });
-  };
-
-  const increaseAge = async (userId, age) => {
-    const userDoc = doc(db, 'users', userId);
-    const newFields = {
-      age: age + 1,
-    };
-
-    await updateDoc(userDoc, newFields);
-  };
-
-  const deleteUser = async (userId) => {
-    const userDoc = doc(db, 'users', userId);
-    await deleteDoc(userDoc);
-  };
-
-  useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, 'users'), (snapshot) => {
-      const users = [];
-      snapshot.forEach((doc) => {
-        users.push({ ...doc.data(), id: doc.id });
-      });
-      setUsers(users);
-      console.log(users);
-    });
-
-    return unsubscribe;
-  }, []);
-
+const App = () => {
   return (
-    <div className='App'>
-      <header className='App-header'>Firebase 9 + React</header>
-      <hr />
-      <div>
-        <input
-          onChange={(e) => setNewName(e.target.value)}
-          type='text'
-          placeholder='name'
-        />
-        <input
-          onChange={(e) => setNewAge(e.target.value)}
-          type='number'
-          placeholder='age'
-        />
-        <button onClick={createUser}>Create User</button>
-      </div>
-      <hr />
-      <div>
-        {users &&
-          users.map((user) => {
-            return (
-              <div
-                key={user.id}
-                style={{
-                  display: 'block',
-                  padding: '5px',
-                  borderBottom: '1px solid #000',
-                }}
-              >
-                <p>{user.name}</p>
-                <p>{user.age}</p>
-                <button onClick={() => increaseAge(user.id, user.age)}>
-                  Increase Age
-                </button>
-                <button onClick={() => deleteUser(user.id)}>Delete User</button>
-              </div>
-            );
-          })}
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/crud' element={<Crud />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
