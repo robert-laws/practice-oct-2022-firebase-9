@@ -10,6 +10,9 @@ const Navigation = () => {
       <p>
         <Link to='/crud'>Crud</Link>
       </p>
+      <p>
+        <Link to='/users'>Users</Link>
+      </p>
     </div>
   );
 };

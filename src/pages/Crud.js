@@ -9,6 +9,7 @@ import {
   updateDoc,
   deleteDoc,
 } from 'firebase/firestore';
+
 import Navigation from '../components/Navigation';
 
 export const Crud = () => {
