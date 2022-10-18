@@ -19,7 +19,7 @@ export const Crud = () => {
 
   const createUser = async () => {
     await addDoc(collection(db, 'users'), {
-      name: newName,
+      username: newName,
       age: Number(newAge),
     });
   };
@@ -61,7 +61,7 @@ export const Crud = () => {
         <input
           onChange={(e) => setNewName(e.target.value)}
           type='text'
-          placeholder='name'
+          placeholder='username'
         />
         <input
           onChange={(e) => setNewAge(e.target.value)}
@@ -83,7 +83,7 @@ export const Crud = () => {
                   borderBottom: '1px solid #000',
                 }}
               >
-                <p>{user.name}</p>
+                <p>{user.username}</p>
                 <p>{user.age}</p>
                 <button onClick={() => increaseAge(user.id, user.age)}>
                   Increase Age

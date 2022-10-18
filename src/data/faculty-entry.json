@@ -1,0 +1,31 @@
+[
+  {
+    "pubId": 1001,
+    "lastName": "Abdel Ghafar",
+    "firstName": "Adel",
+    "authors": ["Gross, Samantha", "Abdel Ghafar, Adel"],
+    "title": "The shifting energy landscape and the Gulf economies' diversification challenge",
+    "year": 2019,
+    "sourceTitle": "The shifting energy landscape and the Gulf economies' diversification challenge",
+    "volume": null,
+    "issue": null,
+    "pageStart": 1,
+    "pageEnd": 25,
+    "pageCount": 25,
+    "doi": null,
+    "link": "https://www.brookings.edu/wp-content/uploads/2019/12/FP_20191210_gcc_energy_ghafar_gross.pdf",
+    "abstract": null,
+    "authorKeywords": ["economy", "GCC"],
+    "indexKeywords": null,
+    "editors": null,
+    "publisher": "Brookings Institution",
+    "issn": null,
+    "isbn": null,
+    "language": "English",
+    "documentType": "Research Paper",
+    "eid": null,
+    "sustainableDevelopmentGoals": null,
+    "cirsSponsored": null,
+    "fullText": "abdel-ghafar-2019-shifting-energy-landscape-and-gulf-economies-diversification-challenge.pdf"
+  }
+]
