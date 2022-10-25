@@ -13,6 +13,9 @@ const Navigation = () => {
       <p>
         <Link to='/users'>Users</Link>
       </p>
+      <p>
+        <Link to='/publications'>All Publications</Link>
+      </p>
     </div>
   );
 };
