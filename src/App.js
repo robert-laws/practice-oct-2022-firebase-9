@@ -15,7 +15,7 @@ const App = () => {
         <Route path='/crud' element={<Crud />} />
         <Route path='/users' element={<Users />} />
         <Route path='/publications' element={<AllPublications />} />
-        <Route path='/publication/:pubId' element={<Publication />} />
+        <Route path='/publication/:id' element={<Publication />} />
         {/* <Route path='/load' element={<DataLoad />} /> */}
       </Routes>
     </BrowserRouter>

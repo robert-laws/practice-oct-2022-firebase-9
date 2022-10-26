@@ -42,7 +42,7 @@ export const AllPublications = () => {
           <ul>
             {allPublications.map((pub) => (
               <li key={pub.id}>
-                <a href={`publication/${pub.pubId}`}>
+                <a href={`publication/${pub.id}`}>
                   {pub.title ? pub.title : pub.sourceTitle}
                 </a>
               </li>
