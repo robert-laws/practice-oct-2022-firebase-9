@@ -1,7 +1,7 @@
 import React from 'react';
 import { db } from '../firebase-config';
 import { addDoc, collection } from 'firebase/firestore';
-import facultyDataSubset from '../data/faculty-data-subset';
+import facultyDataSubset from '../data/faculty-data';
 
 export const DataLoad = () => {
   const addSampleData = async (dataFields) => {

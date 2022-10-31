@@ -36,6 +36,7 @@ export const AllPublications = () => {
       ) : (
         <div>
           <h2>All Publications</h2>
+          <p>{allPublications.length} total publications</p>
           <hr />
           <Navigation />
           <hr />
