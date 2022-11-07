@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase-config';
 import { collection, onSnapshot } from 'firebase/firestore';
+import { ListItem } from '../components/ListItem';
 
 import Navigation from '../components/Navigation';
 
@@ -42,11 +43,14 @@ export const AllPublications = () => {
           <hr />
           <ul>
             {allPublications.map((pub) => (
-              <li key={pub.id}>
-                <a href={`publication/${pub.id}`}>
-                  {pub.title ? pub.title : pub.sourceTitle}
-                </a>
-              </li>
+              <ListItem
+                key={pub.id}
+                id={pub.id}
+                author={`${pub.firstName} ${pub.lastName}`}
+                title={pub.title ? pub.title : pub.sourceTitle}
+                year={pub.year}
+                docType={pub.documentType}
+              />
             ))}
           </ul>
         </div>
